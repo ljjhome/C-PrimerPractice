@@ -19,7 +19,6 @@ std::cout << i - i2 << std::endl;
 std::cout << i - u << std::endl;
 std::cout << u - i << std::endl;
 ```
-<br />
 **Answer:** <br />
 32 <br />
 4264967264 <br />
