@@ -135,4 +135,28 @@ std::cout << i <<" "<<sum<<std::endl;
 100 45
 
 
+**Exercise 2.15** Which of the following definitions, if any, are invalid? why?<br />
+**(a)** `int ival = 1.01;` (valid)<br />
+**(b)** `int &rval1 = 1.01;` (invalid)<br />
+**(c)** `int &rval2 = ival;` (valid)<br />
+**(d)** `int &rval3;` (invalid)
+
+
+**Exercise 2.16** Which, if any, of the folling assignments are invalid? if they are valid, explain what they do.<br />
+`int i =0, &r1 = i; double d = 0, &r2 = d;`
+**(a)** r2 = 3.14159 (d = 3.14159)<br />
+**(b)** r2 = r1 ( d = 0.00) <br />
+**(c)** i = r2 (i = 0) <br />
+**(d)** r1 = d (i = 0)
+
+
+**Exercise 2.17** What does the following code print?<br />
+```cpp
+int i, &ri = i;
+i = 5; ri = 10;
+std::cout << i << " " << ri << std::endl;
+```
+**Answer:** 10 10
+
+
 
