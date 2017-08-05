@@ -159,4 +159,47 @@ std::cout << i << " " << ri << std::endl;
 **Answer:** 10 10
 
 
+**Exercise 2.18** Write code to change the value of a pointer. Write code to change the value to which the pointer points.<br />
+**Answer:** <br />
+```cpp
+int val1 = 10, val2 = 20, *rval1 = &val1, *rval2 = &val2;
+rval1 = &val2; // change the value of a pointer
+*rval2 = 22; //Change the value to which a pointer points
+```
+
+
+**Exercise 2.19** Explain the key differences between pointers and references.<br />
+**Answer:** pointer can be modified to point to other object which reference, once initialized, cannot be changed to refer to other object.
+
+
+**Exercise 2.20** What does the following program do?<br />
+```cpp
+int i = 42; // initialize a int i to be 42
+int *p1 = &i; // define a pointer p1 pointed to int i
+*p1 = *p1 * *p1; //change the value to which the pointer p1 points to.
+```
+
+
+**Exercise 2.21** Explain each of the following definitions. Indicate whether any are illegal and, if so, why.<br />
+`int i = 0` 
+**(a)** `double *dp = &i;` (illegal, the types are different)<br />
+**(b)** `int *ip = i;` (illegal, can not assign int 0 to pointer)
+**(c)** `int *p =&i;` (legal)
+
+
+**Exercise 2.22** Assuming `p` is a pointer to `int`, explain the following code:
+```cpp
+if (p) //if pointer p is not nullptr
+if (*p) //if the value to which p points to is non-zero
+```
+
+
+**Exercise 2.23** Given a pointer p, can you determine whether p points to a valid object? if so, how? if not why?<br />
+**Answer:** we can not determine if a pointer is valid given no other information.
+
+
+**Exercise 2.24** Why is the initialization of p legal but that of lp illegal?
+`int i = 42; void *p = &i; long *lp = &i;`
+**Answer:** because long and int are different types.
+
 
