@@ -65,3 +65,74 @@ int month = 09, day = 07;
 
 **Exercise 2.8** Using escape sequences, write a program to print `2M` followed by a new line. Modify teh program to print `2`, then a tab, then a `M`, followed by a newline.
 
+
+
+**Exercise 2.9** Explain the following definitions. For those that are illegal explain what's wrong and how to correct it <br />
+**(a)** `std::cin >> int input_value;`<br />
+**(b)** `int i = {3.14};`<br />
+**(c)** `double salary = wage = 9999.99;`<br />
+**(d)** `int i = 3.14;`<br />
+**Answer:** <br />
+**(a)** undefine variable <br />
+**(b)** wrong, can't initialize `int` with `double`<br />
+**(c)** wrong `wage` is undefined  <br />
+**(d)** good
+
+
+**Exercise 2.10** What are the initial values, if any, of each of the following variables?<br />
+```cpp
+std::string global_str;
+int global_int;
+int main(){
+    int local_int;
+    std::string local_str;
+}
+```
+<br />
+**Answer:** global_str is `empty`<br />
+global_int is `0`<br />
+local_int is undefined. Note that local_str is initialized by the string class.
+
+
+**Exercise 2.11** Explain whether each of the following is a declaration or a definition:<br />
+**(a)** `extern int ix = 1024;`<br />
+**(b)** `int iy;`<br />
+**(c)** `extern int iz;`<br />
+**Answer:** <br />
+**(a)** definiton <br />
+**(b)** definition<br />
+**(c)** declaration
+
+
+**Exercise 2.12** Which, if any, of the following names are invalid?<br />
+**(a)** `int double = 3.14` (invalid)<br />
+**(b)** `int _;` (valid)<br />
+**(c)** `int catch-22;` (invalid)<br />
+**(d)** `int 1_or_2 = 1;` (invalid) <br />
+**(e)** `double Double = 3.14;` (valid)
+
+
+**Exercise 2.13** What is the value of `j` in the following program?<br />
+```cpp
+int i = 42;
+int main(){
+    int i = 100;
+    int j = i;
+}
+```
+**Answer:** `j=100`
+
+
+**Exercise 2.14** Is the following program legal? if so, what values are printed?<br />
+```cpp
+int i = 100, sum = 0;
+for (int i = 0; i!=10; i++){
+    sum += i
+}
+std::cout << i <<" "<<sum<<std::endl;
+```
+**Answer:**<br />
+100 45
+
+
+
