@@ -203,3 +203,41 @@ if (*p) //if the value to which p points to is non-zero
 **Answer:** because long and int are different types.
 
 
+**Exercise 2.25** Determine the types and values of each of the following variables. <br />
+**(a)** `int *ip, i, &r = i;` (ip is a pointer which points to int; i is an int; r is a reference to i)<br />
+**(b)** `int i, *p = 0;` (i is an int; p is a nullptr points to int)<br />
+**(c)** `int *ip, ip2;` (ip is a pointer with NULL; ip2 is an int)
+
+
+**Exercise 2.26** Which of the following are legal? For those that are illegal, explain why.<br />
+**(a)** `const int buf;` (illegal; not initialized)<br />
+**(b)** `int cnt = 0;` (legal)<br />
+**(c)** `const int sz = cnt;` (legal)<br />
+**(d)** `++cnt; ++sz;` (++cnt is legal cause it is a variable; ++sz is illegal because it's a const variable)
+
+
+**Exercise 2.27** Which of the following initializations are legal? Explain why.<br />
+**(a)** `int i = -1, &r = 0;` (r is wrong, not const)<br />
+**(b)** `int *const p2 = &i2;` (legal)<br />
+**(c)** `const int i=-1, &r =0;` (legal)<br />
+**(d)** `const int *const p3 = &i2` (legal)<br />
+**(e)** `const int *p1 = &i2;` (legal)<br />
+**(f)** `const int &const r2` (illegal;not initialized)<br />
+**(g)** `const int i2=i, &r = i;` (legal)
+
+
+**Exercise 2.28** Explain the following definitions. Identify any that are illegal.<br />
+**(a)** `int i, *const cp;` (illegal, not initialized cp)<br />
+**(b)** `int *p1, *const p2;` (illegal, not initialized p2) <br />
+**(c)** `const int ic, &r=ic;` (illegal, not initialized ic) <br />
+**(d)** `const int *const p3;` (illegal, not initialized p3) <br />
+**(e)** `const int *p;` (legal)
+
+
+**Exercise 2.29** Using the variables in the previous exercise, which of the following assignments are legal? explain why.<br />
+**(a)** `i = ic` (legal)<br />
+**(b)** `p1 = p3` (illegal,because p1 is not a pointer pointing to const)<br />
+**(c)** `p1 = &ic;` (illegal,same reason as (b)) <br />
+**(d)** `p3 = &ic'` (legal)<br />
+**(e)** `p2 = p1` (illegal, p2 is const pointer)<br />
+**(f)** `ic = *p3` (illegal, ic is const int)
