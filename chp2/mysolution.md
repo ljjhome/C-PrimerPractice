@@ -241,3 +241,54 @@ if (*p) //if the value to which p points to is non-zero
 **(d)** `p3 = &ic'` (legal)<br />
 **(e)** `p2 = p1` (illegal, p2 is const pointer)<br />
 **(f)** `ic = *p3` (illegal, ic is const int)
+
+
+**Exercise 2.30** For each of teh following declarateions indicate whetehr the object being declared has top-level or low-level `const`.<br />
+```cpp
+const int v2 = 0; //top-level
+int v1 = v2;
+int *p1 = &v1, &r1 = v1;
+const int *p2 = &v2, *const p3 = &i, &r2 = v2;// all has low-level. p3 has top-level.
+```
+
+
+**Exercise 2.31** Given the declarations in the previous exercise determine wheter the follwoing assignments are legal. Explain how the top-level or low-level const applies in each case.<br />
+```cpp
+r1 = v2; // illegal
+p1 = p2; // illegal
+p2 = p1; // legal
+p1 = p3; // illegal
+p2 = p3; // legal
+```
+
+
+**Exercise 2.32** Is the following code legal or not? if not, how might you make it legal?<br />
+`int null = 0,*p = null; //*p = nullptr;`
+
+
+**Exercise 2.33** Using the variable definitions from this section, determine what happens in each of these assignments:<br />
+```cpp
+a = 42; // a is an int
+b = 42; // b is an int
+c = 42; // c is an int
+d = 42; // d is a pointer point to int so that it can not be assigned to 42 directly, the only literal number it accept is 0
+e = 42; // e is a pointer point to const int same as d
+g = 42; // g is const int reference, which means can not be assigned to antoher number!!!
+```
+
+
+**Exercise 2.34** Write a program containing the variables and assignments from the previous exercise. Print the variables before and after the assignments to check whether your predictions in teh previous exercise were correct. If not, study the example until you can convince yourself you know what led you to the wrong conclusion.
+
+
+**Exercise 2.35** Dtermine the types deduced in each of the following definitions. Once you've figured out the types, write a program to see whether you were correct.<br />
+```cpp
+const int i = 42;
+auto j = i; // j i an int
+const auto &k = i; // k is a reference to const int
+auto *p = &i; //p is a pointer points to const int
+const auto j2 = i; // j2 is a const int
+const auto &k2 = i; // k2 is a reference to const int
+```
+
+
+
