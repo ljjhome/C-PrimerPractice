@@ -291,4 +291,63 @@ const auto &k2 = i; // k2 is a reference to const int
 ```
 
 
+**Exercise 2.36** In the following code, determine the type of each variable and the value each variable has when code finishes:<br />
+```cpp
+int a = 3, b = 4;
+decltype(a) c = a; // c is an int =3
+decltype((b)) d = a; //d is a reference to int
+++c; // c = 4
+++d; // d = 4
+```
 
+
+**Exercise 2.37** Assignment is an example of an expression that yields a reference type. The type is a reference to the type of the left-hand operand. That is, if `i` is an `int`, then the type of the expression `i=x` is int&. Using that knowledge, determine the type and value of each variable in this code: <br />
+```cpp
+int a = 3, b = 4;
+decltype(a) c = a; // c is an int
+decltype(a = b) d = a; //d is a reference to a
+```
+
+
+**Exercise 2.38** Dscribe the differences in type deduction between `decltype` and `auto`. Given an example of an expression where `auto` and `decltype` will deduce the same type and an example where they will deduce differing types. <br />
+**Answer:** <br />
+(1) how they handle toplevel const<br />
+(2) how they handle expression and paranthes
+```cpp
+int i = 0;const int ci = 0;
+decltype(ci) a = ci;
+auto a = ci;
+
+decltype(i) a = i;
+auto a = i;
+```
+
+
+**Exercise 2.39** Compile the following program to see what happens when you forget the semicolon after a class definition. Remember the message for future reference.<br />
+```cpp
+struct Foo {/* empty */}
+int main(){
+    return 0;
+}
+```
+
+
+**Exercise 2.40** Write your own version of the `Sales_data` class.<br />
+```cpp
+struct my_Sales_data{
+    std::string series_no;
+    double price;
+    unsigned int quantity;
+}
+struct my_Sales_data{
+    std::string series_no;
+    double price;
+    unsigned int units_sold;
+}
+```
+
+
+**Exercise 2.41** Use your Sales_data class to rewrite the exercise in 1.5.1 1.5.2 and 1.6. For now, you should define your Sales_data class in the same file as your main function.
+
+
+**Exercise 2.42** Write your own version of the Sales_data.h header and use it to rewrite the exercise from 2.41.
