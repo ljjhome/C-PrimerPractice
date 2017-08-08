@@ -42,4 +42,21 @@ for (auto &c : s){ /*...*/}
 **Answer:** legel, c is a `const char &` 
 
 
+**Exercise 3.12** Which, if any, of the following `vector` definitions are in error? For those, that are legal, explain what the definition does. For those that are not legal, explain why they are illegal.<br />
+**(a)** `vector<vector<int>> ivec;` //legal default initialization<br />
+**(b)** `vector<string> svec = ivec;` //illegal not the same type<br />
+**(c)** `vector<string> svec(10,"null");` //legal
+
+
+**Exercise 3.13** How many elements are there in each of the following vectors? What are the values of the elements?<br />
+**(a)** vector<int> v1; (empty vector);<br />
+**(b)** vector<int> v2(10); (10 elements with 0s)<br />
+**(c)** vector<int> v3(10,42); (10 elements with 42s)<br />
+**(d)** vector<int> v4{10}; (wrong: 10 elements with 0; right: one element 10)<br />
+**(e)** vector<int> v5{10,42}; (two elements 10 and 42)<br />
+**(f)** vector<string> v6{10}; (ten empty string)<br />
+**(g)** vecotr<string> v7{10,"hi"}; (10 elements with "hi")
+
+
+
 
