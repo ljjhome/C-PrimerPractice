@@ -59,4 +59,192 @@ for (auto &c : s){ /*...*/}
 
 
 
+**Exercise 3.18** is the following program legal? if not, how might you fix it?
+```cpp
+vector<int> ivec;
+ivec[0] = 42;
+```
+**Answer:** illegal. the right way:
+```cpp
+vector<int> ivec;
+ivec.push_back(0);
+```
+
+
+**Exercise 3.19** List three ways to define a vector and give it ten elements, each with the value 42. Indicate whether there is a preferred way to do so and why.<br />
+**Answer:**
+```cpp
+/* way 1 */
+vector<int> v1(10,42);
+/* way 2 */
+vecotr<int> v2{42,42,42,42,42,42,24,24,42,42};
+/* way 3 */
+vecotr<int> v3;
+for (unsigned int i = 0; i<10; i++){
+
+}**Exercise 3.18** is the following program legal? if not, how might you fix it?
+```cpp
+vector<int> ivec;
+ivec[0] = 42;
+```
+**Answer:** illegal. the right way:
+```cpp
+vector<int> ivec;
+ivec.push_back(0);
+```
+
+
+**Exercise 3.19** List three ways to define a vector and give it ten elements, each with the value 42. Indicate whether there is a preferred way to do so and why.<br />
+**Answer:**
+```cpp
+/* way 1 */
+vector<int> v1(10,42);
+/* way 2 */
+vecotr<int> v2{42,42,42,42,42,42,24,24,42,42};
+/* way 3 */
+vecotr<int> v3;
+for (unsigned int i = 0; i<10; i++){
+
+}**Exercise 3.18** is the following program legal? if not, how might you fix it?
+```cpp
+vector<int> ivec;
+ivec[0] = 42;
+```
+**Answer:** illegal. the right way:
+```cpp
+vector<int> ivec;
+ivec.push_back(0);
+```
+
+
+**Exercise 3.19** List three ways to define a vector and give it ten elements, each with the value 42. Indicate whether there is a preferred way to do so and why.<br />
+**Answer:**
+```cpp
+/* way 1 */
+vector<int> v1(10,42);
+/* way 2 */
+vecotr<int> v2{42,42,42,42,42,42,24,24,42,42};
+/* way 3 */
+vecotr<int> v3;
+for (unsigned int i = 0; i<10; i++){
+
+}**Exercise 3.18** is the following program legal? if not, how might you fix it?
+```cpp
+vector<int> ivec;
+ivec[0] = 42;
+```
+**Answer:** illegal. the right way:
+```cpp
+vector<int> ivec;
+ivec.push_back(0);
+```
+
+
+**Exercise 3.19** List three ways to define a vector and give it ten elements, each with the value 42. Indicate whether there is a preferred way to do so and why.<br />
+**Answer:**
+```cpp
+/* way 1 */
+vector<int> v1(10,42);
+/* way 2 */
+vecotr<int> v2{42,42,42,42,42,42,24,24,42,42};
+/* way 3 */
+vecotr<int> v3;
+for (unsigned int i = 0; i<10; i++){
+
+}**Exercise 3.18** is the following program legal? if not, how might you fix it?
+```cpp
+vector<int> ivec;
+ivec[0] = 42;
+```
+**Answer:** illegal. the right way:
+```cpp
+vector<int> ivec;
+ivec.push_back(0);
+```
+
+
+**Exercise 3.19** List three ways to define a vector and give it ten elements, each with the value 42. Indicate whether there is a preferred way to do so and why.<br />
+**Answer:**
+```cpp
+/* way 1 */
+vector<int> v1(10,42);
+/* way 2 */
+vecotr<int> v2{42,42,42,42,42,42,24,24,42,42};
+/* way 3 */
+vecotr<int> v3;
+for (unsigned int i = 0; i<10; i++){
+
+}**Exercise 3.18** is the following program legal? if not, how might you fix it?
+```cpp
+vector<int> ivec;
+ivec[0] = 42;
+```
+**Answer:** illegal. the right way:
+```cpp
+vector<int> ivec;
+ivec.push_back(0);
+```
+
+
+**Exercise 3.19** List three ways to define a vector and give it ten elements, each with the value 42. Indicate whether there is a preferred way to do so and why.<br />
+**Answer:**
+```cpp
+/* way 1 */
+vector<int> v1(10,42);
+/* way 2 */
+vecotr<int> v2{42,42,42,42,42,42,24,24,42,42};
+/* way 3 */
+vecotr<int> v3;
+for (unsigned int i = 0; i<10; i++){
+
+}**Exercise 3.18** is the following program legal? if not, how might you fix it?
+```cpp
+vector<int> ivec;
+ivec[0] = 42;
+```
+**Answer:** illegal. the right way:
+```cpp
+vector<int> ivec;
+ivec.push_back(0);
+```
+
+
+**Exercise 3.19** List three ways to define a vector and give it ten elements, each with the value 42. Indicate whether there is a preferred way to do so and why.<br />
+**Answer:**
+```cpp
+/* way 1 */
+vector<int> v1(10,42);
+/* way 2 */
+vecotr<int> v2{42,42,42,42,42,42,24,24,42,42};
+/* way 3 */
+vecotr<int> v3;
+for (unsigned int i = 0; i<10; i++){
+
+}**Exercise 3.18** is the following program legal? if not, how might you fix it?
+```cpp
+vector<int> ivec;
+ivec[0] = 42;
+```
+**Answer:** illegal. the right way:
+```cpp
+vector<int> ivec;
+ivec.push_back(0);
+```
+
+
+**Exercise 3.19** List three ways to define a vector and give it ten elements, each with the value 42. Indicate whether there is a preferred way to do so and why.<br />
+**Answer:**
+```cpp
+/* way 1 */
+vector<int> v1(10,42);
+/* way 2 */
+vecotr<int> v2{42,42,42,42,42,42,24,24,42,42};
+/* way 3 */
+vecotr<int> v3;
+for (unsigned int i = 0; i<10; i++){
+    v3.push_back(42);
+}
+```
+
+
 
