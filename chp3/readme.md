@@ -247,4 +247,8 @@ for (unsigned int i = 0; i<10; i++){
 ```
 
 
+**Exercise 3.26** In the binary serach program on page 112, why did we write `mid = beg + (end - beg) /2;` instead of `mid = (beg + end) /2;`<br />
+**Answer: ** because it is not obvious.
+
+
 
