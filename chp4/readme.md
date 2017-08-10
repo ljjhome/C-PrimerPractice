@@ -126,7 +126,89 @@ string p1 = s + s[s.size()-1] == 's' ? " " : "s";
 
 
 **Exercise 4.24** Our program that distinguished between high pass, pass, and fail depended on the fact that the conditional operator is right associative. Describe how that operator would be evaluated if the operator were left associative.<br />
-**Answer:** if the operator is left associative, then the code becomes: `final = ((grade>90)?"high":(grade<60))?"fail":"pass". the result will be wrong.
+**Answer:** if the operator is left associative, then the code becomes: `final = ((grade>90)?"high":(grade<60))?"fail":"pass"`. the result will be wrong.
 
 
 
+**Exerciese 4.25** What is the value of ~'q'<<6 on a machine with 32-bit int and 8 bit char, that uses Latin-1 character set in which 'q' has the bit pattern `01110001`<br />
+**Ansewr:** 0000-0000-0000-0000-0010-0011-1000-0000
+
+
+**Exercise 4.26** In our grading example in this section, what would happenif we used unsigned int as the type for quiz1.<br />
+**Answer:** wrong:!! may not enough for 30students?
+
+
+**Exercise 4.27** What is the result of each of these expressions? `unsigned long ul1 = 3, ul2 = 7;`<br />
+**(a)** ul1 & ul2 0000-0011<br />
+**(b)** ul1 | ul2 0000-0111<br />
+**(c)** ul1 && ul2 true<br />
+**(d)** ul1 || ul2 true
+
+
+**Exercise 4.29** Predict the output of the following code and explain your reasoning. Now run the program. Is the output what you expectd? if not, figure out why.<br />
+```cpp
+int x[10]; int *p = x;
+cout << sizeof(x)/sizeof(*x)<<endl; // 10
+cout << sizeof(p)/sizeof(*p)<<endl; // 2
+```
+
+
+**Exercise 4.30** Using Table 4.12, parenthesize the follwoing expressions to match the default evaluation:<br />
+**(a)** `sizeof x+y // sizeof(x+y)`<br />
+**(b)** `sizeof p->mem[i] //sizeof(p->mem[i])`<br />
+**(c)** `sizeof a < b // sizeof(a)<b`<br />
+**(d)** `sizeof f() ` <br />
+
+
+**Exercise 4.32** Explain the following loop.<br />
+```cpp
+constexpr int size = 5;
+int ia[size] = {1,2,3,4,5};
+for (int *ptr = ia, ix = 0;ix!=size&&ptr!=ia+size;++ix, ++ptr)
+```
+**Answer** ptr and ix have the same function.
+
+
+**Exercise 4.33** USing the table 4.12 explain what the following expression does:<br />
+`someValue ? ++x,++y:--x,--y;`<br />
+**Answer:** Wrong answer: according to `someValue` if it is true, then add 1 to both x and y, and return y after addition.<br />
+Right answer: the expression is the same as `(someValue?++x,++y:--x),--y...`
+
+
+**Exercise 4.34** Given the variable definitions in the section, explain what conversions take place in the following expression:<br />
+**(a)** `if(fval) //float to int to bool`<br />
+**(b)** `dval = fval+ival // int to float, float to double`<br />
+**(C)** `dval + ival * cval // char to int to double`
+
+
+**Exercise 4.45** Given the follwing definitions, identify the implicit type conversions, if any, taking place:
+```cpp
+char cval; int ival; unsigned int ui;
+float fval; double dval;
+```
+**(a)** `cval = 'a' + 3; // char to int, int to char`<br />
+**(b)** `fval = ui -ival*1.0 //int to double,ui to double, double  to float`<br />
+**(c)** `dval = ui * fval // unsigned to float to double`<br />
+**(d)** `cval = ival+fval+dval;//int to float to double to int to char`
+
+
+
+**Exercise 4.36** Assuming `i` is an `int` and `d` is a `double` write the expression `i*=d` so that it does integral, rather than floating point, multiplication<br />
+**Answer:** ` i*=static_cast<int>(d)`
+
+
+**Exercise 4.37** Rewrite each of the following old-style casts to use a named cast:
+```cpp
+int i; double d; const string *ps; char *pc; void *pv;
+```
+**(a)** `pv=(void*)ps; //pv = static_cast<void*>(const_cast<string*>(ps))`<br />
+**(b)** `i = int(*pc); //i=static_cast<int>(*pc)`<br />
+**(c)** `pv = &d;//pv = static_cast<void*>(&d)`<br />
+**(d)** `pc=(char*)pv;//pc = static_cast<char*>(pv)`<br />
+
+
+**Exercise 4.38** Explain the following expression:<br />
+```cpp
+double slope = static_cast<double>(j/i);
+```
+**Answer** may not get what we want, j/i return a int, then convert it to double.
