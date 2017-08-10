@@ -91,7 +91,42 @@ dval = ival = p = 0; // dval = ival = *p = 0;
 
 **Exercise 4.16** Although the following are legal, they probably do not behave as the programmer expects. Why? Rewrite the expressions as you think they should be.<br />
 **(a)** `if (p = getPtr()!=0) // if((p=getPtr())!=0)`<br />
-**(b)** `if(i = 1024) // if(i == 1024)
+**(b)** `if(i = 1024) // if(i == 1024)`
+
+
+**Exercise 4.17** Explain the difference between prefix and postfix increment.<br />
+**Answer:** prefix increment: first add one, then use it; postfix increment:first use the number then add 1.
+
+
+**Exercise 4.18** What would happen if the `while` loop on page 148 that prints the elements from a `vector` used the prefix increment operator?<br />
+**Answer** it will not print the first element and it will try to access the element which is not belong to the vector.
+
+
+**Exercise 4.19** Given that `ptr` points to an `int`, that `vec` is a `vector<int>`, an that `ival` is an `int`, explain the behavior of each of thse expressions. Which, if any, are likely to be incorrect? why? How might each be corrected? <br />
+**(a)** `ptr!=0 && *ptr++` pointer is not null and the int it points to is not zero.<br />
+**(b)** `ival++ && ival` ival add 1 and it doesn't equal to zero<br />
+**(c)** `vec[ival++]<=vec[ival]` vec[ival+1] <= vec[ival]
+
+
+**Exercise 4.20** Assuming that `iter` is a `vector<string>::iterator`, indicate which, if any, of the following expressions are legal, Explain the behaviour of the legal expressions and why those that aren't legal are in error.<br />
+**(a)** `*iter++` legal return the `*iter` and add one to iter<br />
+**(b)** `(*iter)++` legal return `*iter` and add one to `*iter`<br />
+**(c)** `*iter.empty()` illegal `(*iter).empty() or iter->empty()`<br />
+**(d)** `iter->empty()` legal return the empty() value<br />
+**(e)** `++*iter` legal first compute `++iter` then get then object <br />
+**(f)** `iter++->empty()` wrong:!!first compute `iter->empty()` then add 1 to the reutrn of emtpy()  right::!! first compute the `iter->empty()` then add 1 to `iter`!!! note that iter is the operand, all the operator has to manipulate the operand.
+
+
+**Exercise 4.23** The following expression fails to compile due to operator procedence. Using Table 4.12, explain wh it fails. How would you fix it?
+```cpp
+string s = "word";
+string p1 = s + s[s.size()-1] == 's' ? " " : "s";
+// string p1 = s + (s[s.size()-1]=='s'?" ":"s");
+```
+
+
+**Exercise 4.24** Our program that distinguished between high pass, pass, and fail depended on the fact that the conditional operator is right associative. Describe how that operator would be evaluated if the operator were left associative.<br />
+**Answer:** if the operator is left associative, then the code becomes: `final = ((grade>90)?"high":(grade<60))?"fail":"pass". the result will be wrong.
 
 
 
