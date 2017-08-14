@@ -62,4 +62,22 @@ if (ival = 0) // should be ival==0
 **Answer:** In c++ the ambiguity is resolved by specifying that each else is matched with the closest preceding unmatched if.
 
 
+**Exercise 5.13** Each of the programs in the highlighted text on page 184 contains a common programming error. Identify and correct each error<br />
+**(a)**
+```cpp
+unsigned aCnt = 0, eCnt =0, iouCnt = 0;
+char ch = next_text();
+switch(ch){
+    case 'a': aCnt++; //add a "break here"
+        break;
+    case 'e': eCnt++; break;
+    default: iouCnt++; break;
+}
+```
+**(b)** wrong , control bypass a explicit initializer<br />
+**(c)** wrong, `case 1: case 3: case 5: case 7:...`<br />
+**(d)** shoulb be integral constant label.<br />
+We also text the (b) problem with code ex_5_13.cpp
+
+
 
