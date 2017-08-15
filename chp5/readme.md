@@ -80,4 +80,26 @@ switch(ch){
 We also text the (b) problem with code ex_5_13.cpp
 
 
+**Exercise 5.15** Explain each of the following loops. Correct any; problems you detect.<br />
+**(a)** `ix` is defined inside for loop<br />
+**(b)** missing a `;` in for loop<br />
+**(c)** run forever with `++sz`
+
+
+**Exercise 5.18** Explain each of the following loops. Correct any problems you detect.<br />
+**(a)** need braket<br />
+**(b)** ival should be defined outside<br />
+**(c)** wrong, the ival should be define outsiede
+
+
+**Exercise 5.22** The last example in this section that jumped back to `begin` could be better written using a loop. Rewrite the code to eliminate the `goto`.<br />
+```cpp
+int sz = get_size();
+while(sz <=0){
+    sz = get_size();
+}
+```
+```cpp
+for (int sz = get_size();sz<=0;sz = get_size())
+```
 
