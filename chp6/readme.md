@@ -62,3 +62,14 @@ vector<int> vec(10);
 
 **Exercise 6.20** When should reference parameters be references to `const`?What happend if we make a parameter a plain reference when it could be a reference to `const`?<br />
 **Answer:** we don't want to change it in function. we can not pass a const parameter to the funciton.
+
+
+**Exercise 6.24** Explain the behavior of the following function. if there are problems in the code. explain what they are and how you might fix them.<br />
+```cpp
+void print(const int ia[10]){
+    for (size_t i =0;i!=10;++i){
+        cout <<ia[i] <<endl; 
+    }
+}
+```
+note that there is problem. `const int ia[10]` has nothing to do with ten. we can pass 244,12 and what ever we want. So we can use `const int (&a)[10]`instead
