@@ -73,3 +73,87 @@ void print(const int ia[10]){
 }
 ```
 note that there is problem. `const int ia[10]` has nothing to do with ten. we can pass 244,12 and what ever we want. So we can use `const int (&a)[10]`instead
+
+
+
+**Exercise 6.28** In the second version of `error_msg` that has an `errorCode` parameter, what is the type of `elem` in for loop?<br />
+**Answer:** it is a reference to const string
+
+
+**Exercise 6.29** When you use an `initializer_list` in a range `for` whould you ever use a reference as the loop control variable? if so ,why? if not, why not'<br />
+**Answer:** The argument pass in are literal value, so we have to use a const reference or don't use a reference. 
+
+
+**Exercise 6.31** When is it valid to return a reference? A reference to `const`?<br />
+**Answer:** not a local parameter
+
+
+**Exercise 6.32** Indicate whether the following function is legal. If so, explain what it does; if not, correct any errors and then explain it
+```cpp
+int &get(int *array, int index){
+    return array[index];
+}
+int main(){
+    int ia[10];
+    for (int i = 0;i!=10;++i){
+        get(ia,i) = i; //should use reference 
+    }
+}
+```
+
+
+**Exercise 6.34** What would happen if the stopping condition in `factorial`were `if(val!=0)`<br />
+**Answer:** can not deal with non-positive number.
+
+
+**Exercise 6.35** In the call to `fact`, why did we pass `val-1` rather than `val--`?<br />
+**Answer:** `val--` will case unstopable loop.
+
+
+**Exercise 6.36** Write the declaration for a function that returns a reference to an array of ten stringS, without using either a trailing return, `decltype` or a type alias<br />
+**Answer:** 
+```cpp
+string (&func(string (&a)[10]))[10]
+```
+
+
+**Exercise 6.37** Write three additional declarations for the function in the previous exercise. One should use a type alias, one should use a trailing rturn, and the third should use decltype. which form do you prefer?<br />
+**Answer:**
+```cpp
+typedef string aref[10];
+aref& func(string (&aa)[10]);
+
+auto funct(string (&aa)[10])-> string (&)[10];
+
+string (&aa)[10];
+decltype(aa) function(string (&ahah)10);
+```
+
+
+**Exercise 6.38** Revise the `arrPtr` function on to return a reference to the array.
+```cpp
+decltype(odd) & arrPtr(int i){
+    return (i%2)?odd:even;
+}
+```
+
+
+**Exercise 6.39** Explain the effect of the second declaration in each one of the following sets of declarations. Indicate which, if any, are illegal.<br />
+**(a)** 
+```cpp
+int calc(int, int);
+int calc(const int, const int); //illegal
+```
+**(b)** 
+```cpp
+int get();
+double get(); //illegal
+```
+**(c)**
+```cpp
+int *reset(int*);
+double * resect(double *); //legal
+```
+
+
+
