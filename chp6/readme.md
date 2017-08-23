@@ -156,4 +156,102 @@ double * resect(double *); //legal
 ```
 
 
+**Exercise 6.40** Which, if either, of the following declarations are errors? Why?<br />
+**(a)** 
+```cpp
+int ff(int a, int b = 0, int c = 0); // legal
+```
+**(b)**
+```cpp
+char * init(int ht = 24, int wd, char backgrnd); // illegal 
+```
 
+
+**Exercise 6.41** Which if any, of the following calls are illegal? why?
+which, if any, are legal but unlikely to match the programmer's intent? why?<br />
+```cpp
+char *init(int ht, int wd = 80, char bckgrnd = ' ');
+```
+**(a)** `init(); //illegal`<br />
+**(b)** `init(24,10); //legal`<br />
+**(c)** `init(14,'*'); //legal but not match the intend`
+
+
+**Exercise 6.42** Give the second parameter of `make_plural` a default argument of `'s'`. Test your program by printing singular and plural versions of the words success and failure<br />
+**Answer:**
+```cpp
+string make_plural(size_t ctr, const string &word, const string &ending = "s")
+make_plural(ctr, "success","es");
+make_plural(ctr, "failure");
+```
+
+
+**Exercise 6.43** Which one of the following declarations and definitions would you put in a headere? In a source file? Explain why.<br />
+**(a)** 
+```cpp
+inline bool eq(const BigInt&, const BigInt&){...} // header file
+```
+**(b)**
+```cpp
+void putValues(int *arr, int size); // source file
+```
+
+
+
+**Exercise 6.46** Would it be possible to define `isShorter` as a `constexpr`?if so, do so. If not, explain why not.<br />
+**Answer:** no, the compilier can not descide the constexpr.
+
+
+**Exercise 4.48** Explain what this loop does and whether it is a good use of `assert`
+```cpp
+string s;
+while(cin>>s && s != sought){};
+assert(cin);
+```
+**Answer:** input a string untill it is equal to sought. assert is meaningless here.
+
+
+**Exercise 6.49** What is a candidate function? What is a viable function<br />
+**Answer:** a set of functions that can be considered for the call are candidate functions. the set of functions that can be called with arguments in the given call are viable functions.
+
+
+**Exercise 6.50** Given the declarations for `f` from page 242, list the viable functions, if any for each of the following calls. Indicate which function is the best match, or if the call is illegal whether there is no match or why the call is ambiguous.<br />
+**(a)** f(2.56,42) none <br />
+**(b)** f(43) f(int) <br />
+**(c)** f(42,0) f(int, int) <br />
+**(d)** f(2.56,3.14) f(double,double) <br />
+
+
+**Exercise 6.52** Given the following declarations
+```cpp
+void manip(int, int);
+double dobj;
+```
+What is the rank of each conversion in teh following calls?<br />
+**(a)** manip('a','z') promotion<br />
+**(b)** manip(2.31, dobj) converstion
+
+
+**Exercise 6.53** Explain the effect of the second declaration in each one fo the following sets of declarations. Indicate which, if any, are illegal<br />
+**(a)**
+```cpp
+int calc(int&, int&); // for none const value
+int calc(const int&, const int&); //for const value
+```
+**(b)**
+```cpp
+int calc(char *, char*); //for none const
+int calc(const char*, const char*); //for const
+```
+**(c)** 
+```cpp
+int calc(char*, char*);
+int calc(char *const, char *const); //They are the same
+```
+
+
+**Exercise 6.54** Write a declaration for a function that takes two `int` parameters and returns an `int` and declare a `vector` whose elements have this function pointer type<br />
+```cpp
+int myfunc(int, int);
+vector<int (*)(int,int)> funcvec;
+```
