@@ -2,14 +2,19 @@
 #include <string>
 #include <vector>
 using namespace std;
-struct Person {
+class Person {
+
+    friend istream & read(istream & is, Person & p);
+    friend ostream & print(ostream &os, Person &p);
+public:
     Person() = default;
     Person(const string na,const string ad);
-    string name;
-    string address;
 
     string getName() const;
     string getAddress() const;
+private:
+    string name;
+    string address;
 };
 Person::Person(const string na, const string ad): name(na),address(ad){}
 istream & read(istream & is, Person & p){

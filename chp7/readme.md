@@ -12,4 +12,35 @@ Sale_data::Sale_data():bookNo(""),units_sold(0),revenue(0.0){}
 ```
 
 
+**Exercise 7.16** What, if any, are the constraints on where and how often an access specifier may appear inside a class definition? What kinds of members should be defined after a `public` specifier? What kinds should be `private`?<br />
+**Answer:** no contraints on where and how often the access specifier appear inside a class. `public` members define the interface to the class. `private` members encapsulate the implemetations.
+
+
+**Exercise 7.17** What, if any, are the differences between using `class` and `struct`?<br />
+**Answer:** the default member in `class` are private while the default member in `struct` are public.
+
+
+**Exerise 7.18** What is encapsulation? Why is it useful?<br />
+**Answer:** define as a private member. User will not worry about the implementation.
+
+
+**Exercise 7.19** Indicate which members of your `Person` class you would declare as `public` and which you would declare as `private`. Explain your choice.<br />
+**Answer:** 
+```cpp
+string name; //private
+string address; //private
+string getName(); //public
+string getAddress(); //public
+```
+
+
+**Exercise 7.20** When are friends useful? Discuss the pros and cons of using friends.<br />
+**Answer:** A class can allow another class or function to access its non `pblic` members by making that class or function a friend.<br />
+**Pros** functions will have access to private members.<br />
+**Cons** The encapsulation is not as good.
+
+
+**Exercise 7.25** Can `screen` safely rely on teh default versions of copy and assignment? if so, why? if not, why not?<br />
+**Answer:** yes.
+
 
