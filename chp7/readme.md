@@ -44,3 +44,8 @@ string getAddress(); //public
 **Answer:** yes.
 
 
+**Exercise 7.30** It is legal but redundant to refer to members through the `this` pointer. Discuss the pros and cons of explicitly using the `this` pointer to access members<br />
+**Answer:** It will be more clear to read, but words to write. The variable with same name of the member variable can be used.
+
+
+

@@ -9,3 +9,7 @@ add_executable(ex_7_6 ./ex_7_6.cpp ./ex_7_6_func.cpp)
 add_executable(ex_7_9 ./ex_7_9.cpp )
 add_executable(ex_7_11 ./ex_7_11.cpp ./ex_7_6_func.cpp)
 add_executable(ex_7_13 ./ex_7_13.cpp ./ex_7_6_func.cpp)
+add_executable(ex_7_27 ./ex_7_27.cpp screen.cpp)
+add_executable(ex_7_31 ./ex_7_31.cpp)
+
+add_executable(ex_7_32 ./ex_7_32.cpp Window_mgr.cpp screen.cpp )
