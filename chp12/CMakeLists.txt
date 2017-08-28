@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.0)
+project(chp12)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+INCLUDE_DIRECTORIES("./")
+add_executable(ex_12_2 ./ex_12_2.cpp ./StrBlob.hpp)
+add_executable(ex_12_6 ./ex_12_6.cpp)
+add_executable(ex_12_16 ./ex_12_16.cpp)
