@@ -118,3 +118,27 @@ typedef unique_prt<int> IntP;
 
 **Exercise 12.18** Why doesn't `shared_ptr` have a `release` member?<br />
 **Answer:** because it doesn't own a object.
+
+
+**Exercise 12.21** We could have written `StrBlobPtr` deref member as follows:
+```cpp
+std::string& deref() const
+{
+    return (*check(cur,"derefernece past end"))[curr];
+}
+```
+Which version do you think is better?<br />
+**Answer:** original one is better, this one looks complicated.
+
+
+**Exercise 12.22** What changes would need to be made to `StrBlobPtr` to create a class that can be used with a `const StrBlob`? Define a class named `ConstStrBlobPtr` that can point to a `const StrBlob`
+
+
+**Exercise 12.25** Given the following new expression, how would you delete pa?
+```cpp
+int *pa = new int[10];
+delete [] pa;
+```
+
+
+
