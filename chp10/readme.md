@@ -33,4 +33,8 @@ fill_n(vec.begin(),10,0);
 because the library operate on iterators not containers. Thus, an algorithm connot add or remove elements.
 
 
+**Exercise 10.23** How many arguments does `bind` take?<br />
+**Answer:** n+1, where n is the number of argument the function we bind take in.
+
+
 
