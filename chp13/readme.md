@@ -130,9 +130,9 @@ f(c); // copy constructor cout << new.mysn
 
 **Exercise 13.16** what if the parameter in `f` were `const numbered &`? Does that change the output? If so, why? What output gets generated?
 ```cpp
-f(a); // cout << a.mysn
-f(b); // cout << b.mysn
-f(c); // cout << c.mysn
+f(a); // cout << a.mysn;
+f(b); // cout << b.mysn;
+f(c); // cout << c.mysn;
 ```
 
 
@@ -144,4 +144,9 @@ f(c); // cout << c.mysn
 **Answer:** if we didn't define the destructor, the resources allocated by `new` will not be correctly collected. If we didn't define the copy constructor, they will point to the same memory.
 
 
+**Exercise 13.29** Explain why the calls to `swap` inside `swap(HasPtr &, HasPtr&)` do not cause a recursion loop.<br />
+**Answer:** beause the program first decide which swap to use, it will find a best fit `swap` to avoid the loop.
 
+
+**Exercise 13.32** Would the pointerlike version of `HasPtr` benefit from defineing a swap function? if so, what is the benefit? if not, why?
+**ANswer:** there is no explict memory allocation in pointerlike version, so the improvement is not obvious.
