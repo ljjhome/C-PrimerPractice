@@ -27,4 +27,7 @@ int main(){
     cout << "refercence argument............"<<endl;
     funcr(x2);
 
+    cout << "new test ..................."<<endl;
+    X x4(x1);
+    return 0;
 }

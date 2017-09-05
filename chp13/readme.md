@@ -136,4 +136,12 @@ f(c); // cout << c.mysn
 ```
 
 
+**Exercise 13.23** Compare the copy-control members that you wrote for the solutions to the previous section's exercise to the code presented here. Be sure you understand teh differences, if any, between your code and ours.<br />
+**Answer:** There are actually some differences between my solution and the given example. I used `*ps = *p.ps;`. and this implementation can successfully compiled and run. I think it is ok to implement that way. 
+
+
+**Exercise 13.24** What would happend if the version of `HasPtr` in this section didn't define a destructor? What if `HasPtr` didn't define the copy constructor?<br />
+**Answer:** if we didn't define the destructor, the resources allocated by `new` will not be correctly collected. If we didn't define the copy constructor, they will point to the same memory.
+
+
 
