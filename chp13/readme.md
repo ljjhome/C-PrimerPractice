@@ -148,5 +148,34 @@ f(c); // cout << c.mysn;
 **Answer:** beause the program first decide which swap to use, it will find a best fit `swap` to avoid the loop.
 
 
-**Exercise 13.32** Would the pointerlike version of `HasPtr` benefit from defineing a swap function? if so, what is the benefit? if not, why?
+**Exercise 13.32** Would the pointerlike version of `HasPtr` benefit from defineing a swap function? if so, what is the benefit? if not, why? <br />
 **ANswer:** there is no explict memory allocation in pointerlike version, so the improvement is not obvious.
+
+
+**Exercise 13.33** Why is the paramter to the `save` and `remove` members of `Message` a `Folder&`? Why didn't we define that parameter as `Folder`? Or `const Folder&`? <br />
+**ANswer:** Because we want to add members to the Folder object, we have to use a reference rather than a const or `Folder`.
+
+
+**Exercise 13.35** What would happen if `message` used the synthesized versions of the copy-control members?<br />
+**Answer:** the new message will not be added to the corresponding folders.
+
+
+**Exercise 13.41** Why did we use postfix increment in the call to construct inside `push_back`? What would happend if it used the prefix increment?<br />
+**Answer:** The first element will be null.
+
+
+**Exercise 13.45** Distinguish between an rvalue reference and an lvalue reference.<br />
+**ANswer:** Like any reference, an rvalue reference is just another name for an object. As we know, We cannot bind regular references-which we'll refer to as lvalue refereenceswhen we need to distinguish them from rvalue references- to expressions that require a conversion, to literals, or to expressions that return an rvalue. Rvalue references have the opposite binding properties: We can bind an rvalue reference to these kinds of expressions, but we cannot directly bind an rvalue reference to an lvalue.
+
+
+**Exercise 13.46** Which kind of reference can be bound to the following initializer?
+```cpp
+int f();
+vector<int> vi(100);
+int &&ri = f();
+int &r2 = vi[0];
+int &r3 = ri; // ri is an variable;
+int && r4 = vi[0] * f();
+```
+
+
