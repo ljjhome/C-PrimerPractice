@@ -1,3 +1,4 @@
+/*
 #include <string>
 #include <iostream>
 #include "StrBlob.hpp"
@@ -11,3 +12,4 @@ int main(){
     cout << sb1.usecount()<<endl;
     return 0;
 }
+*/

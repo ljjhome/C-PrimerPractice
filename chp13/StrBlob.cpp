@@ -18,3 +18,13 @@ StrBlob & StrBlob::operator=(const StrBlob&sb){
     data = std::make_shared<std::vector<std::string>>(*sb.data);
     return *this;
 }
+    void StrBlob::p1(std::string &&s){
+     
+    data->push_back(std::move(s));
+    std::cout << "push_back(std::string &&s)"<<std::endl;
+    }
+    void StrBlob::p1(const std::string& s){
+     
+    data->push_back(s);
+    std::cout << "push_back(const std::string &s)"<<std::endl;
+    }
