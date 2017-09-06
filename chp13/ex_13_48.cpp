@@ -6,11 +6,12 @@
 using namespace std;
 int main(){
     
+    Str s1("heihei");
     vector<Str> sv{"haha"};
     cout <<"push1.."<<endl;
-    sv.push_back("nima");
+    sv.push_back(s1);
     cout <<"push2.."<<endl;
-    sv.push_back("woqu");
+    sv.push_back(s1);
     cout <<"push3.."<<endl;
     sv.push_back("shenme");
     cout <<"push4.."<<endl;

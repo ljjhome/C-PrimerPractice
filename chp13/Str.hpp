@@ -9,8 +9,9 @@ public:
     Str():elements(nullptr),cap(nullptr){}
     Str(const char* c);
     Str(const Str&);
+    Str(Str &&) noexcept;
     Str& operator=(const Str&);
-    ~Str(){free();}
+    ~Str(){free();std::cout << "free().."<<std::endl;}
     size_t size() const{return cap - elements;}
     char* begin() const {return elements;}
     char* end() const {return cap;}
@@ -42,6 +43,12 @@ Str::Str(const Str& s){
      std::cout << "Str(const Str& s)..."<<std::endl;
 }
 
+Str::Str(Str &&s) noexcept {
+    elements = s.elements;
+    cap = s.cap;
+    s.elements = s.cap = nullptr;
+    std::cout<<"Str(Str&&) noexcept.. "<<std::endl;
+}
 Str& Str::operator=(const Str& s){
     auto datanew = alloc.allocate(s.size());
     auto cpat = std::uninitialized_copy(s.begin(),s.end(),datanew);

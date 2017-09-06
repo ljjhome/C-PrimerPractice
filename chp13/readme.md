@@ -178,4 +178,9 @@ int &r3 = ri; // ri is an variable;
 int && r4 = vi[0] * f();
 ```
 
+**Exercise 13.52** Explain in detail waht happends in the assignments of the `HasPtr` objects on page 541. In particular, describe step by step waht happens to value of `hp`, `hp2` and of the `rhs` parameter in the `HasPtr` assignment operator.<br />
+**ANswer:** In the first assignment, the right-hand operand is an lvalue, so the move constructor is not viable. The copy constructor will be used to initialize `rhs`. The copy constructor will allocate a new `string` and copy the `string` to which `hp2` points.<br />
+In the second assignment, we invoke `std::move` to bind an rvalue reference to hp2. In this case, both the copy consructor and the move constructor are viable. However, because the argument is an rvalue reference, it is an exact match for the move constructor. The move constructor copies the pointer from `hp2`. It does not allocate any memory.
+
+
 
