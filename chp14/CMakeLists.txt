@@ -10,4 +10,5 @@ add_executable(ex_14_37 ./ex_14_37.cpp)
 add_executable(ex_14_38 ./ex_14_38.cpp)
 add_executable(ex_14_40 ./ex_14_40.cpp)
 add_executable(ex_14_42 ./ex_14_42.cpp)
+add_executable(ex_14_44 ./ex_14_44.cpp)
 

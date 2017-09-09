@@ -84,4 +84,67 @@ Sales_data operator*(const Sales_data &s, double rate){
 **ANswer:** The lambda function is more easy to write if it is not too complex. if we want to use the function many times, we'd better use a class.
 
 
+**Exercise 14.46** Explain whether defining these `Sales_data` conversion operators is a good idea and whether they should be `explicit` <br />
+**Answer:** not intuitive. If we have to we should define it as `explicit`.
 
+
+**Exercise 14.47** Explain teh difference between these two conversion operators:
+```cpp
+struct Integral{
+    operator const int(); //turn an object into const int
+    operator int() const; //the function is a const member function
+}
+```
+
+
+**Exercise 14.50** Show the possible class-type conversion sequences for teh initializations of `ex1` and `ex2`. Explain whetehr the intiazliation are legal or not.
+```cpp
+struct LongDouble{
+    LongDouble(double = 0.0);
+    operator double();
+    operator float();
+};
+LongDouble ldObj;
+int ex1 = ldObj; // double to int, float to int
+float ex2 = ldObj; // float to int.
+```
+
+
+**Exercise 14.51** Show the conversion sequences (if any) needed to call each version of `calc` and explain why the best viable function is selected.
+```cpp
+void calc(int);
+void calc(LongDouble);
+double dval;
+calc(dval); // best:calc(int)
+```
+**ANswer:** because the class-type conversion has lowest rank<br />
+1.exact match<br />
+2.const conversion<br />
+3.promotion<br />
+4.arithmetic or pointer conversion<br />
+5.class-type conversion.
+
+
+**Exercise 14.52** Which operator+ if any, is selected for each of the addition expressions? List the candidate functions, teh viable functions, and teh type conversions on the arguments for each viable function:
+```cpp
+struct LongDouble{
+    LongDouble operator+(const SmallInt&);
+};
+LongDouble operator+(LongDouble&, double);
+SmallInt si;
+LongDouble ld;
+ld = si + ld; // no operator+
+ld = ld + si; //member operator+
+```
+
+
+**Exercise 14.53** Given the definition of `SmallInt` on page 588, determine whether the following addition expression is legal. If so, what addition operator is used? If not, how might you change the code to make it legal?
+```cpp
+SmallInt s1;
+double d = sl + 3.14;//wrong!!!: legal 3.14to smallint then int to double
+```
+**Answer:** ambiguous:
+```cpp
+SmallInt s1;
+double d = s1 + SmallInt(3.14);
+```

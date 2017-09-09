@@ -23,6 +23,13 @@ public:
     Sales_data& operator<<(const std::string& s){
         bookNo = s; return *this;
     } 
+    
+    operator std::string(){
+        return bookNo;
+    }
+    operator double(){
+        return revenue; 
+    }
     void operator+=(const Sales_data& sd){
         units_sold += sd.units_sold;
         revenue += sd.revenue;
