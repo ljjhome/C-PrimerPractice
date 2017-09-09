@@ -14,6 +14,12 @@ public:
     Sales_data(const std::string &s):bookNo(s){}
     Sales_data(const std::string &s, const unsigned units, const double rev):bookNo(s),units_sold(units),revenue(rev){}
     Sales_data(const Sales_data&sd):bookNo(sd.bookNo),units_sold(sd.units_sold),revenue(sd.revenue){}
+    Sales_data& operator=(const std::string &s){
+        bookNo = s; 
+        units_sold = 0;
+        revenue = 0;
+        return *this;
+    }
     Sales_data& operator<<(const std::string& s){
         bookNo = s; return *this;
     } 

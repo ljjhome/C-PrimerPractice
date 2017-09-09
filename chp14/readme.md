@@ -44,3 +44,44 @@ istream & operator>>(istream in, Sales_data &s){
 }
 /* it doesn't handle the illegal input which may cause wrong value.
 ```
+
+
+**Exercise 14.13** Which other arithmetic operators do you think `Sales_data` ought to support? Define any you think the class should include.<br />
+```cpp
+/* - -= * / > < */
+void operator-=(const Sales_data &sd){
+    units_sold -= sd.units_sold;
+    revenue -= sd.revenue;
+}
+
+Sales_data operator-(const Sales_data &sd1, const Sales_data &sd2){
+    Sales_data st = sd1;
+    st-=sd2;
+    return st;
+}
+
+Sales_data operator*(const Sales_data &s, double rate){
+    
+    Sales_data st = s;
+    st.units_sold *= rate;
+    st.revenue *= rate;
+    return st;
+}
+```
+
+
+**Exercise 14.14** Why do you think it is more efficient to define operator+ to call operator+= rather than other way around?<br />
+**ANswer:** because it is more concise.
+
+
+**Exercise 14.33** How many operands may an overloaded function-call operator take?<br />
+**Answer:** any
+
+
+
+    
+**Exercise 14.41** Why do you suppose the new standard added lambdas? Explain when you would use a lambda and when you would write a class instead.<br />
+**ANswer:** The lambda function is more easy to write if it is not too complex. if we want to use the function many times, we'd better use a class.
+
+
+
