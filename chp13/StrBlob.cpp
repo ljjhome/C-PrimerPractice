@@ -1,5 +1,8 @@
 #include "StrBlob.hpp"
 
+bool operator==(const StrBlob & s1, const StrBlob & s2){
+    return *s1.data == *s2.data;
+}
 void StrBlob::check(size_type i, const std::string& msg) const{
     if(i >= data->size())
         throw std::out_of_range(msg);

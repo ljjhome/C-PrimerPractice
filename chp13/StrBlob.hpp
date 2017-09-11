@@ -6,6 +6,7 @@
 #include <memory>
 class StrBlob{
 public:
+    friend bool operator==(const StrBlob & s1, const StrBlob & s2);
     typedef std::vector<std::string>::size_type size_type;
     StrBlob();
     StrBlob(std::initializer_list<std::string> il);

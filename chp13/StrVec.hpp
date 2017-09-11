@@ -6,6 +6,7 @@
 #include <algorithm>
 class StrVec{
 public:
+    friend bool operator==(const StrVec & s1, const StrVec &s2);
     StrVec():elements(nullptr),first_free(nullptr), cap(nullptr){}
     StrVec(std::initializer_list<std::string> il);
     StrVec(const StrVec&);
@@ -33,6 +34,19 @@ private:
     std::string* cap;
 };
 
+bool operator==(const StrVec & s1, const StrVec &s2){
+    if(s1.size() != s2.size()){
+        return false; 
+    }
+    else {
+        for(auto it1 = s1.begin(), it2 = s2.begin();it1!=s1.end();){
+            if(*it1++ != *it2++){
+                return false; 
+            } 
+        } 
+    }
+    return true;
+}
 void StrVec::reserve(size_t n){
     if(n>capacity()){
         auto datanew = alloc.allocate(n);
