@@ -90,4 +90,29 @@ class Derived_from_protected; // legal
 ```
 
 
-**Exercise 
+**Exercise 15.23** Assuming that class D1 had intented to override its inherited `fcn` function, how would you fix that class? Assuming you fixed the class so that `fcn` matched the definition in Base, how would the calls in that section be resolved?<br />
+**Answer:** 
+```cpp
+class D1: public Base{
+public:
+    int fcn();
+    virtual void f2();
+};
+
+bp1->fcn(); // Base::fcn()
+bp2->fcn(); // D1::fcn()
+bp3->fcn(); // D2::fcn()
+```
+
+
+**Exercise 15.24** what kinds of classes need a virtual destructor? What operations must a virtual destructor perform? <br />
+**Answer:** base class needs a virtual destructor. The destructor needs to be virtual to allow objects in the inheritance hierarchy to be dynamically allocated and destroyed.
+
+
+**Exercise 15.25** Why did we define a default constructor for Disc-quote? What effect, if any, would removing that constructor have on the behavior of Bulk-quote?<br />
+**Answer:** The reason is that a constructor taking 4 parameters has been defined, which prevented the compiler generate synthesized version defualt constructor. As a default constructor of any class derived from it has been defined as deleted. Thus, the default constructor must be defined explicitly so that the derived classes can call it when executing its default constructor.
+
+
+
+
+
