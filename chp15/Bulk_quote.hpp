@@ -14,9 +14,13 @@ public:
     void debug() override{
         std::cout << "string bookNo;"<<"double price;" <<"size_t min_qty;"<<"double discount;"<<std::endl;
     }
+	Bulk_quote * clone() const & override;
+	Bulk_quote * clone() && override; 
 	virtual ~Bulk_quote(){std::cout << "~Bulk_quote()"<<std::endl;}
 };
 
+	Bulk_quote * Bulk_quote::clone() const &{return new Bulk_quote(*this);} 
+	Bulk_quote * Bulk_quote::clone() && {return new Bulk_quote(std::move(*this));}
 double Bulk_quote::net_price(size_t n ) const{
     if(n >= num){
         return n * (1 - discount) * price; 

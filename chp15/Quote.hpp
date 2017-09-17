@@ -14,6 +14,8 @@ public:
     virtual void debug(){
         std::cout<<"string bookNo;"<<"double price"<<std::endl; 
     }
+	virtual Quote* clone() const &{return new Quote(*this);}
+	virtual Quote* clone() && {return new Quote(std::move(*this));}
     virtual ~Quote() ;
 private: 
     std::string bookNo;
