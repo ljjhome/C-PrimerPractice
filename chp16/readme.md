@@ -28,3 +28,23 @@ private:
 	ListItem *front, *end;// ListItem<elemType> *front, *end;
 };
 ```
+
+
+**Exercise 16.13** Explain which kind of friendship you chose for the equality and relational operators for BlobPtr.<br />
+**Answer:** We chose the one-to-one friendship.
+
+
+**Exercise 16.17** What, if any, are the differences between a type parameter that is declared as a typename and one that is declared as class? When must typename be used?<br />
+**Answer:** When we use them in declaration, they are the same, when we want to use class members that are types, we have to use `typename`.
+
+
+**Exercise 16.18** Explain each of the following function template declarations and identify whether any are illegal. Correct each error that you find.
+```cpp
+template<typename T,U,typename V> void f1(T,U,V); // template<typename T, typename U, typename V>
+template<typnname T> T f2(int &T); // T f2(int &a)
+inline template<typename T> T foo(T, unsigned int*); // template<typename T> inline T foo(T, unsigned int *);
+template< typename T> f4(T,T); // correct
+
+typedef char Ctype;
+template<typename Ctype> Ctype f5(Ctype a); // correct
+```
