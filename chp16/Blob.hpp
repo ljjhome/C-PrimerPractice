@@ -12,6 +12,7 @@ public:
 	friend class BlotPtr<T>;
 	typedef typename std::vector<T>::size_type size_type;
 	Blob();
+	template <typename It> Blob(It b, It e);
 	Blob(std::initializer_list<T> il);
 	size_type size() const {return data->size();}
 	bool empty() const {return data->empty();}
@@ -23,6 +24,9 @@ private:
 	std::shared_ptr<std::vector<T>> data;
 	void check(size_type i, const std::string &msg) const;
 };
+template<typename T>
+template<typename It>
+Blob<T>::Blob(It b, It e):data(std::make_shared<std::vector<T>>(b,e)){}
 
 template<typename T>
 Blob<T>::Blob(std::initializer_list<T> il): data(std::make_shared<T>(il)){}
